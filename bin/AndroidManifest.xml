@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hci.reminder"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="16" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR"/> 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" 
+        android:name=".ReminderApplication">
+        
+       	<receiver android:name=".receiver.ConnectivityReceiver">
+    		<intent-filter>
+    		    <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+    		</intent-filter>
+		</receiver>
+       	
+        <receiver android:name=".receiver.ReminderReceiver"></receiver>
+        
+        <receiver android:name=".receiver.AutoRemind">
+            <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+            </intent-filter>
+        </receiver>
+        
+        <service android:name=".receiver.NotificationService" />
+        
+        <activity
+            android:name=".activities.HomeActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.MovieListActivity"
+            android:label="@string/title_activity_movie_list" >
+        </activity>
+        <activity
+            android:name=".activities.MovieDetailsActivity"
+            android:label="@string/title_activity_movie_details"
+             android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name=".activities.ReviewActivity"
+            android:label="@string/title_activity_review" >
+        </activity>
+        <activity
+            android:name=".activities.ChannelListActivity"
+            android:label="@string/title_activity_channel_list" >
+        </activity>
+    </application>
+
+</manifest>

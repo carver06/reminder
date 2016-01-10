@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Reminder</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="search_movie">Znajdź film</string>
+    <string name="search_series">Znajdź serial</string>
+    <string name="title_activity_movie_list">Lista filmów</string>
+    <string name="popular_movie">Popularne</string>
+    <string name="upcomming_movie">Nadchodzące</string>
+    <string name="title_activity_movie_details">MovieDetailsActivity</string>
+    <string name="show_review">Pokaż recenzję</string>
+    <string name="title_activity_review">ReviewActivity</string>
+    <string name="channels_list">Lista kanałów</string>
+    <string name="title_activity_channel_list">ChannelListActivity</string>
+    <string name="observed">Obserwowane</string>
+
+</resources>
