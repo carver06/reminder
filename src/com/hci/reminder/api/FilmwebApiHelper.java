@@ -69,7 +69,7 @@ public class FilmwebApiHelper {
      * @param filmId ID filmu
      * @return Opis filmu
      */
-    public String getFilmDescription(int filmId) {
+    public String getFilmDescription(int filmId) { 
         if (filmId <= 0) return null;
         String desc = "";
         if (conn.setMethod("getFilmDescription ["+filmId+"]")) {
